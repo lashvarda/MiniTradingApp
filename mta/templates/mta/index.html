@@ -1,13 +1,10 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mini Trading App</title>
-    <link rel="stylesheet" href="{% static 'mta/style/style.css' %}">
-</head>
+{% include 'mta/main-parts/head.html' %}
 <body>
-    <h1>dedamotynuli</h1>
+    <header>
+        {% include 'mta/main-parts/navigation.html' %}
+    </header>
 </body>
 </html>
