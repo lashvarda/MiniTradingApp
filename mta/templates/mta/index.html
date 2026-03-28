@@ -2,10 +2,26 @@
 <!DOCTYPE html>
 <html lang="en">
 {% include 'mta/main-parts/head.html' %}
-<body>
+<body class="body">
     {% include 'mta/main-parts/sidebar.html' %}
     
-    <div class="topbar"></div>
+    <div class="topbar">
+        <h3>Dashboard</h3>
+        <h5>balance: 0$</h5>
+    </div>
+
+    <center>
+    <div class="summary_cards">
+        <div class="card1" style="background-color: #0906b9;">
+            <h1>1000$</h1>
+            <p>Balance</p>
+        </div>
+        <div class="card2" style="background-color: #ae00ff;">
+            <h1>200$</h1>
+            <p>Profit</p>
+        </div>
+    </div>
+    </center>
 
     {% include 'mta/main-parts/footer.html' %}
 </body>

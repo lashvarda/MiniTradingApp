@@ -1,13 +1,15 @@
 <aside class="sidebar">
   <nav>
-    <a href="/" class="nav-logo">Mini Trading</a>
+    <a href="/" class="nav-logo">Crypto Trading App</a>
     <ul>
-      <li><a href="/">Home</a></li>
-      <li><a href="/market/">Market</a></li>
-      <li><a href="/portfolio/">Portfolio</a></li>
-      <li><a href="/leaderboard/">Leaderboard</a></li>
-      <li><a href="/profile/">Profile</a></li>
+        <li><a href="/" class="{% if request.path == '/' %}active{% endif %}">Home</a></li>
+        <li><a href="/market/" class="{% if request.path == '/market/' %}active{% endif %}">Market</a></li>
+        <li><a href="/portfolio/" class="{% if request.path == '/portfolio/' %}active{% endif %}">Portfolio</a></li>
+        <li><a href="/leaderboard/" class="{% if request.path == '/leaderboard/' %}active{% endif %}">Leaderboard</a></li>
+        <li><a href="/profile/" class="{% if request.path == '/profile/' %}active{% endif %}">Profile</a></li>
     </ul>
+    <style>
+    </style>
     <button type="button" class="btn btn-primary">Log In</button>
   </nav>
 </aside>
