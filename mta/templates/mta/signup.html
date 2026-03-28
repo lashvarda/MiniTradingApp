@@ -1,0 +1,156 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Crypto Trading App - Sign Up</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=DM+Serif+Display&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="{% static 'mta/style/login.css' %}"/>
+</head>
+<body>
+
+<div class="card">
+
+  <div class="brand">
+    <div class="brand-icon">
+      <svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M10 2L3 6v8l7 4 7-4V6L10 2z" stroke="#fff" stroke-width="1.6" stroke-linejoin="round"/>
+        <path d="M10 2v12M3 6l7 4 7-4" stroke="#fff" stroke-width="1.6" stroke-linejoin="round"/>
+      </svg>
+    </div>
+    <span class="brand-name">Crypto Trading App</span>
+  </div>
+
+  <div class="heading">
+    <h1>Create an account</h1>
+    <p>Sign up to start trading crypto</p>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="error-msg" id="errorMsg">
+    <svg width="15" height="15" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm-.75-11a.75.75 0 011.5 0v4a.75.75 0 01-1.5 0V7zm.75 7.25a1 1 0 110-2 1 1 0 010 2z" clip-rule="evenodd"/></svg>
+    <span id="errorText">Please fill in all fields.</span>
+  </div>
+
+  <div class="field">
+    <label for="name">Full name</label>
+    <div class="input-wrap">
+      <svg class="field-icon" viewBox="0 0 20 20" fill="currentColor"><path d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z"/></svg>
+      <input type="text" id="name" placeholder="John Doe" autocomplete="name"/>
+    </div>
+  </div>
+
+  <div class="field">
+    <label for="email">Email address</label>
+    <div class="input-wrap">
+      <svg class="field-icon" viewBox="0 0 20 20" fill="currentColor"><path d="M3 4a2 2 0 012-2h10a2 2 0 012 2v1.5L10 11 3 5.5V4z"/><path d="M3 7.25V16a2 2 0 002 2h10a2 2 0 002-2V7.25L10 13 3 7.25z"/></svg>
+      <input type="email" id="email" placeholder="you@example.com" autocomplete="email"/>
+    </div>
+  </div>
+
+  <div class="field">
+    <label for="password">Password</label>
+    <div class="input-wrap" style="position:relative;">
+      <svg class="field-icon" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 1a4.5 4.5 0 00-4.5 4.5V9H5a2 2 0 00-2 2v6a2 2 0 002 2h10a2 2 0 002-2v-6a2 2 0 00-2-2h-.5V5.5A4.5 4.5 0 0010 1zm3 8V5.5a3 3 0 10-6 0V9h6z" clip-rule="evenodd"/></svg>
+      <input type="password" id="password" placeholder="••••••••" autocomplete="new-password"/>
+      <button class="eye-btn" id="eyeBtn" type="button" aria-label="Toggle password">
+        <svg id="eyeIcon" width="17" height="17" viewBox="0 0 20 20" fill="currentColor">
+          <path d="M10 3C5 3 1.73 7.11 1.05 9.87a1 1 0 000 .26C1.73 12.89 5 17 10 17s8.27-4.11 8.95-6.87a1 1 0 000-.26C18.27 7.11 15 3 10 3zm0 11a4 4 0 110-8 4 4 0 010 8z"/>
+          <path d="M10 8a2 2 0 100 4 2 2 0 000-4z"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <div class="field">
+    <label for="confirm-password">Confirm password</label>
+    <div class="input-wrap" style="position:relative;">
+      <svg class="field-icon" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 1a4.5 4.5 0 00-4.5 4.5V9H5a2 2 0 00-2 2v6a2 2 0 002 2h10a2 2 0 002-2v-6a2 2 0 00-2-2h-.5V5.5A4.5 4.5 0 0010 1zm3 8V5.5a3 3 0 10-6 0V9h6z" clip-rule="evenodd"/></svg>
+      <input type="password" id="confirm-password" placeholder="••••••••" autocomplete="new-password"/>
+      <button class="eye-btn" id="eyeBtn2" type="button" aria-label="Toggle confirm password">
+        <svg id="eyeIcon2" width="17" height="17" viewBox="0 0 20 20" fill="currentColor">
+          <path d="M10 3C5 3 1.73 7.11 1.05 9.87a1 1 0 000 .26C1.73 12.89 5 17 10 17s8.27-4.11 8.95-6.87a1 1 0 000-.26C18.27 7.11 15 3 10 3zm0 11a4 4 0 110-8 4 4 0 010 8z"/>
+          <path d="M10 8a2 2 0 100 4 2 2 0 000-4z"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <button class="btn-primary" id="signupBtn" onclick="handleSignup()">Create Account</button>
+
+  <div class="or-row"><span>or continue with</span></div>
+
+  <button class="btn-oauth">
+    <svg width="17" height="17" viewBox="0 0 48 48">
+      <path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/>
+      <path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/>
+      <path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/>
+      <path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.18 1.48-4.97 2.31-8.16 2.31-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/>
+    </svg>
+    Continue with Google
+  </button>
+
+  <p class="footer-text">Already have an account? <a href="/login/">Sign in</a></p>
+
+</div>
+
+<script>
+  // toggle password visibility — reusable
+  function toggleEye(inputId, btnId, iconId) {
+    const input = document.getElementById(inputId);
+    const icon  = document.getElementById(iconId);
+    document.getElementById(btnId).addEventListener('click', () => {
+      const hidden = input.type === 'password';
+      input.type = hidden ? 'text' : 'password';
+      icon.innerHTML = hidden
+        ? `<path d="M2.22 2.22a.75.75 0 011.06 0l14.5 14.5a.75.75 0 11-1.06 1.06l-1.65-1.65A8.3 8.3 0 0110 17c-5 0-8.27-4.11-8.95-6.87a1 1 0 010-.26c.4-1.67 1.35-3.3 2.73-4.6L2.22 3.28a.75.75 0 010-1.06zm5.5 8.62L9.1 12.27A2 2 0 0010 12a2 2 0 00-2-2 2 2 0 00-.28.03l-.5-.5A4 4 0 0114 10a4 4 0 01-4 4 4 4 0 01-2.28-.16z"/><path d="M13.02 7.76l-1.08-1.08A8.23 8.23 0 0010 6.5c-6.27 0-8.73 4.5-8.95 6.87a1 1 0 000 .26c.36 1.5 1.22 2.98 2.48 4.18"/>`
+        : `<path d="M10 3C5 3 1.73 7.11 1.05 9.87a1 1 0 000 .26C1.73 12.89 5 17 10 17s8.27-4.11 8.95-6.87a1 1 0 000-.26C18.27 7.11 15 3 10 3zm0 11a4 4 0 110-8 4 4 0 010 8z"/><path d="M10 8a2 2 0 100 4 2 2 0 000-4z"/>`;
+    });
+  }
+
+  toggleEye('password', 'eyeBtn', 'eyeIcon');
+  toggleEye('confirm-password', 'eyeBtn2', 'eyeIcon2');
+
+  function handleSignup() {
+    const name    = document.getElementById('name').value.trim();
+    const email   = document.getElementById('email').value.trim();
+    const pass    = document.getElementById('password').value;
+    const confirm = document.getElementById('confirm-password').value;
+    const btn     = document.getElementById('signupBtn');
+    const err     = document.getElementById('errorMsg');
+    const errText = document.getElementById('errorText');
+
+    err.classList.remove('show');
+
+    if (!name || !email || !pass || !confirm) {
+      errText.textContent = 'Please fill in all fields.';
+      err.classList.add('show');
+      return;
+    }
+
+    if (pass !== confirm) {
+      errText.textContent = 'Passwords do not match.';
+      err.classList.add('show');
+      return;
+    }
+
+    if (pass.length < 8) {
+      errText.textContent = 'Password must be at least 8 characters.';
+      err.classList.add('show');
+      return;
+    }
+
+    btn.classList.add('loading');
+    btn.textContent = 'Creating account';
+
+    // TODO: replace with your actual form submission / fetch call
+    setTimeout(() => {
+      btn.classList.remove('loading');
+      btn.textContent = 'Create Account';
+    }, 1800);
+  }
+</script>
+</body>
+</html>

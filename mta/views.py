@@ -15,3 +15,9 @@ def portfolio(request):
 
 def profile(request):
     return render(request, 'mta/profile.html', {'title': 'Profile'})
+
+def login(request):
+    return render(request, 'mta/login.html', {'title': 'Login'})
+
+def signup(request):
+    return render(request, 'mta/signup.html', {'title': 'Signup'})
