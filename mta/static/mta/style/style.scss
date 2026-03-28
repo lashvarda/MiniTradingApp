@@ -171,3 +171,27 @@
     }
   }
 }
+
+.actives {
+  padding: 2rem;
+  h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: #6b7280;
+  }
+
+  .table {
+    height: auto;
+    min-height: 200px;
+    align-items: flex-start;   // align table to top, not center
+    justify-content: flex-start;
+  }
+
+    // Placeholder text styling
+    &::before {
+      content: 'No active trades yet';
+      font-size: 1rem;
+      opacity: 0.6;
+    }
+  }

@@ -23,6 +23,42 @@
     </div>
     </center>
 
+    <div class="actives">
+        <h3>Active Trades</h3>
+        <div class="table">
+            <table style="width:100%; border-collapse: collapse; color: #111827;">
+                <thead>
+                    <tr style="border-bottom: 2px solid #e5e7eb;">
+                        <th style="padding: 0.75rem; text-align: left;">Symbol</th>
+                        <th style="padding: 0.75rem; text-align: left;">Type</th>
+                        <th style="padding: 0.75rem; text-align: left;">Entry Price</th>
+                        <th style="padding: 0.75rem; text-align: left;">Current Price</th>
+                        <th style="padding: 0.75rem; text-align: left;">P&L</th>
+                        <th style="padding: 0.75rem; text-align: left;">Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for trade in active_trades %}
+                    <tr style="border-bottom: 1px solid #f3f4f6;">
+                        <td style="padding: 0.75rem;">{{ trade.symbol }}</td>
+                        <td style="padding: 0.75rem;">{{ trade.type }}</td>
+                        <td style="padding: 0.75rem;">{{ trade.entry_price }}</td>
+                        <td style="padding: 0.75rem;">{{ trade.current_price }}</td>
+                        <td style="padding: 0.75rem;">{{ trade.pnl }}</td>
+                        <td style="padding: 0.75rem;">{{ trade.status }}</td>
+                    </tr>
+                    {% empty %}
+                    <tr>
+                        <td colspan="6" style="padding: 1rem; text-align: center; color: #6b7280;">
+                            No active trades yet
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+
     {% include 'mta/main-parts/footer.html' %}
 </body>
 </html>
